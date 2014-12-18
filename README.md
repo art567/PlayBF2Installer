@@ -32,7 +32,7 @@ Setting up the project
 ---------------------
 1. Be sure to have [Inno Setup 5.5 Inno Setup Compiler 5.4.3] installed. You might be able to compile it using previous versions of Inno Setup or using Inno Setup Compiler, but this is untested and may not work.
 
-2. Open **PlayBF2.iss**, and build installer. Watch for log while building. All should be successfull.
+2. Open **PlayBF2.iss**, and build installer. Watch for log while building. Everything should be successfull.
 
 3. Run **PlayBF2.exe** and it should start up with no errors. You can use debugger to debug setup process at the all setup stages.
 
