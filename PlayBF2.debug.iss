@@ -38,7 +38,7 @@ ArchitecturesInstallIn64BitMode=x64
 ArchitecturesAllowed=x86 x64
 InternalCompressLevel=ultra
 Compression=lzma
-OutputDir=out
+OutputDir=out/debug
 OutputBaseFilename=setup
 
 [Run]
