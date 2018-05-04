@@ -3,13 +3,13 @@ AppName=Battlefield 2
 AppVerName=Battlefield 2
 AppCopyright=Tema567
 AppID={{62E8C452-B0F7-4B2A-A710-2814708D42A5}
-AppPublisher=Electronic Arts
-AppPublisherURL=http://www.eagames.com/redesign/home.jsp
-AppSupportURL=http://playbf2.ru
+AppPublisher=PlayBF2
+AppPublisherURL=http://playbf2.com
+AppSupportURL=http://playbf2.com
 AppVersion=1.5
 VersionInfoVersion=1.5
 VersionInfoCopyright=Tema567
-VersionInfoCompany=PLAYBF2.RU
+VersionInfoCompany=PLAYBF2
 VersionInfoDescription=BattleField 2
 VersionInfoTextVersion=v1.5
 DefaultDirName={code:GetInstallDir}
@@ -22,8 +22,9 @@ DefaultGroupName=Battlefield 2
 DisableStartupPrompt=true
 DisableWelcomePage=true
 DisableProgramGroupPage=true
-DisableReadyPage=yes
-ShowLanguageDialog=no
+DisableDirPage=false
+DisableReadyPage=true
+ShowLanguageDialog=true
 ShowTasksTreeLines=true
 AllowRootDirectory=true
 AllowNoIcons=true
@@ -42,8 +43,15 @@ OutputDir=out/debug
 OutputBaseFilename=setup
 
 [Run]
-Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: Ввести лицензионный ключ
-Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: Обновить PunkBuster; BeforeInstall: PreparePunkbuster
+Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Ввести лицензионный ключ"; Languages: Russian
+Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Обновить PunkBuster"; BeforeInstall: PreparePunkbuster; Languages: Russian
+;Filename: {app}\BF2.exe; Parameters: +fullscreen 1 +restart 1 +ignoreAsserts 1; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Запустить Battlefield 2"; Languages: Russian
+Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Enter license key"; Languages: English
+Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Update PunkBuster"; BeforeInstall: PreparePunkbuster; Languages: English
+;Filename: {app}\BF2.exe; Parameters: +fullscreen 1 +restart 1 +ignoreAsserts 1; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Start Battlefield 2"; Languages: English
+Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Enter license Key"; Languages: German
+Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Update PunkBuster"; BeforeInstall: PreparePunkbuster; Languages: German
+;Filename: {app}\BF2.exe; Parameters: +fullscreen 1 +restart 1 +ignoreAsserts 1; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Start Battlefield 2"; Languages: German
 
 [Icons]
 ; English - Common
@@ -55,6 +63,7 @@ Name: {group}\Battlefield 2 - Window mode; Filename: {app}\BF2.exe; Parameters: 
 Name: {group}\Battlefield 2 - Connect to T~GAMER; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1 +joinServer bf2.tgamer.ru +port 16567; WorkingDir: {app}; IconFilename: {app}\BF2.exe; Comment: Launch Battlefield 2 and connect to T~GAMER; IconIndex: 0; Languages: English
 Name: {group}\Support; Filename: {app}\Redist\; WorkingDir: {app}; Flags: foldershortcut; Languages: English
 Name: {userdesktop}\Battlefield 2; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1; WorkingDir: {app}; IconFilename: {app}\BF2.exe; Comment: Launch Battlefield 2; IconIndex: 0; Languages: English
+Name: {userdesktop}\Battlefield 2 - Connect to T~GAMER; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1 +joinServer bf2.tgamer.ru +port 16567; WorkingDir: {app}; IconFilename: {app}\BF2.exe; Comment: Launch Battlefield 2 and connect to T~GAMER; IconIndex: 0; Languages: English
 Name: {userdesktop}\Battlefield 2 - Special Forces; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1 +modPath mods/xpack +ignoreAsserts 1; WorkingDir: {app}; IconFilename: {app}\mods\xpack\bf2xpack.ico; Comment: Launch Battlefield 2 - Special Forces; IconIndex: 0; Languages: English
 ; English - PR
 ;Name: {group}\Project Reality; Filename: {app}\mods\pr\pr.exe; WorkingDir: {app}\mods\pr; IconFilename: {app}\mods\pr\readme\icons\pr.ico; Comment: Launch Project Reality: Battlefield 2; IconIndex: 0; Languages: English
@@ -71,6 +80,7 @@ Name: {group}\Battlefield 2 - Подключиться к T~GAMER; Filename: {app}\BF2.exe; P
 ;Name: {group}\Battlefield 2 - Подключиться к T~GAMER; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1 +playerPrefix ваш_префикс +playerName ваш_ник +playerPassword ваш_пароль +joinServer bf2.tgamer.ru +port 16567; WorkingDir: {app}; IconFilename: {app}\BF2.exe; Comment: Запустить Battlefield 2 и подключиться к серверу T~GAMER; IconIndex: 0; Languages: "Russian"
 Name: {group}\Дополнительные файлы поддержки; Filename: {app}\Redist\; WorkingDir: {app}; Flags: foldershortcut; Languages: Russian
 Name: {userdesktop}\Battlefield 2; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1; WorkingDir: {app}; IconFilename: {app}\BF2.exe; Comment: Запустить Battlefield 2; IconIndex: 0; Languages: Russian
+Name: {userdesktop}\Battlefield 2 - подключиться к T~GAMER; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1 +joinServer bf2.tgamer.ru +port 16567; WorkingDir: {app}; IconFilename: {app}\BF2.exe; Comment: Запустить Battlefield 2 и подключиться к серверу T~GAMER; IconIndex: 0; Languages: Russian
 Name: {userdesktop}\Battlefield 2 - Special Forces; Filename: {app}\BF2.exe; Parameters: +menu 1 +fullscreen 1 +restart 1 +modPath mods/xpack +ignoreAsserts 1; WorkingDir: {app}; IconFilename: {app}\mods\xpack\bf2xpack.ico; Comment: Запустить Battlefield 2 - Special Forces; IconIndex: 0; Languages: Russian
 ; Russian - PR
 ;Name: {group}\Project Reality; Filename: {app}\mods\pr\pr.exe; WorkingDir: {app}\mods\pr; IconFilename: {app}\mods\pr\readme\icons\pr.ico; Comment: Запустить Project Reality: Battlefield 2; IconIndex: 0; Languages: Russian
@@ -80,18 +90,21 @@ Name: {userdesktop}\Battlefield 2 - Special Forces; Filename: {app}\BF2.exe; Par
 ;Name: {userdesktop}\Project Reality; Filename: {app}\mods\pr\pr.exe; WorkingDir: {app}\mods\pr; IconFilename: {app}\mods\pr\readme\icons\pr.ico; Comment: Запустить Project Reality: Battlefield 2; IconIndex: 0; Languages: Russian
 
 [UninstallDelete]
-Name: {app}; Type: filesandordirs
+; Name: {app}; Type: filesandordirs
 Name: {group}; Type: filesandordirs
 
 [Languages]
 Name: English; MessagesFile: compiler:Default.isl;
 ; LicenseFile: data\docs\license_en.rtf
+Name: German; MessagesFile: compiler:Languages\German.isl;
+; LicenseFile: data\docs\license_de.rtf
 Name: Russian; MessagesFile: compiler:Languages\Russian.isl;
 ; LicenseFile: data\docs\license_ru.rtf
 
 [INI]
 ; English
-Filename: {group}\Links\Visit our website bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru; Languages: English
+Filename: {group}\Links\Visit PlayBF2.url; Section: InternetShortcut; Key: URL; String: http://playbf2.ru; Languages: English
+Filename: {group}\Links\Visit website bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru; Languages: English
 Filename: {group}\Links\Visit forums on bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru/forum; Languages: English
 ;Filename: {group}\Links\Visit our website pr.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://pr.tgamer.ru; Languages: English
 ;Filename: {group}\Links\Visit forums on pr.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://pr.tgamer.ru/forum; Languages: English
@@ -99,8 +112,9 @@ Filename: {group}\Links\Visit forums on bf2.tgamer.ru.url; Section: InternetShor
 ;Filename: {group}\Links\Download Point of Existence.url; Section: InternetShortcut; Key: URL; String: http://pointofexistence.com/poe2full.php; Languages: English
 ;Filename: {group}\Links\Download Project Reality.url; Section: InternetShortcut; Key: URL; String: http://www.realitymod.com/downloads.html; Languages: English
 ; Russian
-Filename: {group}\Ссылки\Перейти на сайт bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru; Languages: Russian
-Filename: {group}\Ссылки\Перейти на форум bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru/forum; Languages: Russian
+Filename: {group}\Ссылки\Проект PlayBF2.url; Section: InternetShortcut; Key: URL; String: http://playbf2.ru; Languages: Russian
+Filename: {group}\Ссылки\Посетить веб-сайт bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru; Languages: Russian
+Filename: {group}\Ссылки\Посетить форум bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru/forum; Languages: Russian
 ;Filename: {group}\Ссылки\Перейти на сайт pr.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://pr.tgamer.ru; Languages: Russian
 ;Filename: {group}\Ссылки\Перейти на форум pr.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://pr.tgamer.ru/forum; Languages: Russian
 ;Filename: {group}\Ссылки\Скачать Allied Intent Xtended.url; Section: InternetShortcut; Key: URL; String: http://www.aixtended.com/clientfiles.html; Languages: Russian
@@ -232,9 +246,54 @@ Source: files\Redist\PunkBuster\pbsvc.exe; DestDir: {app}\Redist\PunkBuster; Fla
 [Code]
 { RedesignWizardFormBegin } // Don't remove this line!
 // Don't modify this section. It is generated automatically.
+// Variables
 var
   TopLogoImage: TBitmapImage;
 
+// Splash screen on startup
+// using isgsg.dll depedency
+procedure ShowSplashScreen(p1:HWND;p2:ansistring;p3,p4,p5,p6,p7:integer;p8:boolean;p9:Cardinal;p10:integer); external 'ShowSplashScreen@files:isgsg.dll stdcall delayload';
+
+// Windows 7 "Glass" installer
+// using iswin7.dll depedency
+procedure iswin7_add_glass(Handle:HWND; Left, Top, Right, Bottom : Integer; GDIPLoadMode: boolean); external 'iswin7_add_glass@files:iswin7.dll stdcall';
+procedure iswin7_add_button(Handle:HWND); external 'iswin7_add_button@files:iswin7.dll stdcall';
+procedure iswin7_free; external 'iswin7_free@files:iswin7.dll stdcall';
+
+
+// Open up URL when user clicks on logo
+procedure BannerClick(Sender: TObject);
+var
+  ErrorCode:integer;
+begin
+  ShellExec('open','http://www.playbf2.ru/go/client','','',SW_SHOWNORMAL,ewNoWait,ErrorCode);
+end;
+
+
+// Determine installer default path
+function GetInstallDir(def: String): String;
+var
+  d, r: String;
+begin
+  d := '';
+  if IsWin64 then
+  begin
+    r := 'SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2';
+  end else
+  begin
+    r := 'SOFTWARE\Electronic Arts\EA Games\Battlefield 2';
+  end;
+  if RegQueryStringValue(HKEY_LOCAL_MACHINE, r, 'InstallDir', d) then
+  begin
+    Result := d;
+  end else
+  begin
+    Result := ExpandConstant('{pf32}')+'\EA GAMES\Battlefield 2\';
+  end;
+end;
+
+
+// Make redesign of installer wizard form
 procedure RedesignWizardForm;
 begin
   with WizardForm.Bevel do
@@ -306,6 +365,8 @@ begin
   begin
     Name := 'TopLogoImage';
     Parent := WizardForm.MainPanel;
+    OnClick := @BannerClick;
+    Cursor:=crHand;
     Left := ScaleX(0);
     Top := ScaleY(0);
     Width := ScaleX(497);
@@ -333,59 +394,20 @@ begin
   begin
     Top := ScaleY(-306);
   end;
-
-{ ReservationBegin }
-  // This part is for you. Add your specialized code here.
-
-{ ReservationEnd }
 end;
-// Don't modify this section. It is generated automatically.
-{ RedesignWizardFormEnd } // Don't remove this line!
 
-const
-  dURL=1;
 
-var
-  URLLabel,URLLabelShadow:TLabel;
-  
-procedure iswin7_add_glass(Handle:HWND; Left, Top, Right, Bottom : Integer; GDIPLoadMode: boolean); external 'iswin7_add_glass@files:iswin7.dll stdcall';
-procedure iswin7_add_button(Handle:HWND); external 'iswin7_add_button@files:iswin7.dll stdcall';
-procedure iswin7_free; external 'iswin7_free@files:iswin7.dll stdcall';
-
+// Rename "Next" button to "Install"
 procedure CurPageChanged(CurPageID: Integer);
 begin
   if CurPageID = wpSelectDir then
     WizardForm.NextButton.Caption := SetupMessage(msgButtonInstall);
   if CurPageID = wpFinished then
     WizardForm.NextButton.Caption := SetupMessage(msgButtonFinish);
-  
-  //else
-  //  WizardForm.NextButton.Caption := SetupMessage(msgButtonNext);
 end;
 
 
-function GetInstallDir(def: String): String;
-var
-  d, r: String;
-begin
-  d := '';
-  if IsWin64 then
-  begin
-    r := 'SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2';
-  end else
-  begin
-    r := 'SOFTWARE\Electronic Arts\EA Games\Battlefield 2';
-  end;
-  if RegQueryStringValue(HKEY_LOCAL_MACHINE, r, 'InstallDir', d) then
-  begin
-    Result := d;
-  end else
-  begin
-    Result := ExpandConstant('{pf32}')+'\EA GAMES\Battlefield 2\';
-  end;
-  //MsgBox('Value is "' + Result + '"', mbInformation, MB_OK);
-end;
-
+// Prepare user for using latest PunkBuster
 procedure PreparePunkBuster;
 var
   Path: String;
@@ -415,86 +437,35 @@ begin
   except end;
 end;
 
-procedure ShowSplashScreen(p1:HWND;p2:string;p3,p4,p5,p6,p7:integer;p8:boolean;p9:Cardinal;p10:integer); external 'ShowSplashScreen@files:isgsg.dll stdcall delayload';
 
-procedure URLLabelClick(Sender: TObject);
-var
-  ErrorCode:integer;
-begin
-  ShellExec('open','http://playbf2.ru','','',SW_SHOWNORMAL,ewNoWait,ErrorCode);
-end;
-
-procedure URLLabelMouseDown(Sender:TObject;Button:TMouseButton;Shift:TShiftState;X,Y:Integer);
-begin
-  URLLabel.Top:=URLLabel.Top+dURL;
-  URLLabel.Left:=URLLabel.Left+dURL;
-  URLLabel.Font.Style:=URLLabel.Font.Style+[fsUnderline];
-  URLLabel.Font.Color:=clBlue;
-  URLLabelShadow.Visible:=False;
-end;
-
-procedure URLLabelMouseUp(Sender:TObject;Button:TMouseButton;Shift:TShiftState;X,Y:Integer);
-begin
-  URLLabel.Top:=URLLabel.Top-dURL;
-  URLLabel.Left:=URLLabel.Left-dURL;
-  URLLabel.Font.Style:=URLLabel.Font.Style-[fsUnderline];
-  URLLabel.Font.Color:=clMaroon;
-  URLLabelShadow.Visible:=True;
-end;
-
+// Init entry point
 procedure InitializeWizard;
+var
+  SplashFile: AnsiString;
 begin
+  // Make our redesign
   RedesignWizardForm;
+
   // Show About Setup...
   with WizardForm do begin
     Position:=poScreenCenter;
   end;
-  // URLLabelShadow
-  //URLLabelShadow:=TLabel.Create(WizardForm);
-  //with URLLabelShadow do begin
-  //  Top:=ScaleY(330);
-  //  Left:=ScaleX(25);
-  //  Caption:='http://playbf2.ru';
-  //  AutoSize:=True;
-  //  Parent:=WizardForm;
-  //  Transparent:=True;
-  //  Font.Name := 'MS Sans Serif';
-  //  Font.Color:=$969696;
-  //  Font.Size:=9;
-  //  Font.Style:=Font.Style+[fsBold];
-  //end;
-  // URLLabel
-  //URLLabel:=TLabel.Create(WizardForm);
-  //with URLLabel do begin
-  //  Top:=ScaleY(330)-dURL;
-  //  Left:=ScaleX(25)-dURL;
-  //  Caption:='http://playbf2.ru';
-  //  AutoSize:=True;
-  //  Parent:=WizardForm;
-  //  Cursor:=crHand;
-  //  Transparent:=True;
-  //  Font.Name := 'MS Sans Serif';
-  //  Font.Color:=$0900c4;
-  //  Font.Size:=9;
-  //  Font.Style:=Font.Style+[fsBold];
-  //  BringToFront;
-  //  OnClick:=@URLLabelClick;
-  //  OnMouseDown:=@URLLabelMouseDown;
-  //  OnMouseUp:=@URLLabelMouseUp;
-  //end;
-  // Make installer with glass
-  //iswin7_add_button(WizardForm.BackButton.Handle);
-  iswin7_add_button(WizardForm.NextButton.Handle);
-  //iswin7_add_button(WizardForm.CancelButton.Handle);
-  iswin7_add_glass(WizardForm.Handle, 0, 0, 0, 68, True);
-  // Splash Extract
+
+  // Show splash screen
   ExtractTemporaryFile('splash.bmp');
-  // Splash Show
-  ShowSplashScreen(WizardForm.Handle,ExpandConstant('{tmp}')+'\splash.bmp',1000,3000,1000,0,255,False,$FFFFFF,10);
+  SplashFile := ExpandConstant('{tmp}')+'\splash.bmp';
+  ShowSplashScreen(WizardForm.Handle,SplashFile,1000,3000,1000,0,255,False,$FFFFFF,10);
+
+  // Make installer with glass
+  iswin7_add_button(WizardForm.NextButton.Handle);
+  iswin7_add_glass(WizardForm.Handle, 0, 0, 0, 68, True);
 end;
 
+
+// Deinit entry point
 procedure DeinitializeSetup();
 begin
+  // Remove glass and deinit
   iswin7_free;
 end;
 
