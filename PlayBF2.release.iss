@@ -43,13 +43,18 @@ OutputDir=out/release
 OutputBaseFilename=setup
 
 [Run]
-Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Ввести лицензионный ключ"; Languages: Russian
+Filename: {app}\PlayBF2.exe; Parameters: /q /k /n; Description: "Ввести лицензионный ключ"; Flags: skipifdoesntexist postinstall runascurrentuser; BeforeInstall: BF2KeyChange; Languages: Russian
+;Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /k; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Ввести лицензионный ключ"; Languages: Russian
 Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Обновить PunkBuster"; BeforeInstall: PreparePunkbuster; Languages: Russian
 ;Filename: {app}\BF2.exe; Parameters: +fullscreen 1 +restart 1 +ignoreAsserts 1; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Запустить Battlefield 2"; Languages: Russian
-Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Enter license key"; Languages: English
+
+Filename: {app}\PlayBF2.exe; Parameters: /q /k /n; Description: "Ввести лицензионный ключ"; Flags: skipifdoesntexist postinstall runascurrentuser; BeforeInstall: BF2KeyChange; Languages: English
+;Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /k; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Enter license key"; Languages: English
 Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Update PunkBuster"; BeforeInstall: PreparePunkbuster; Languages: English
 ;Filename: {app}\BF2.exe; Parameters: +fullscreen 1 +restart 1 +ignoreAsserts 1; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Start Battlefield 2"; Languages: English
-Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /a; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Enter license Key"; Languages: German
+
+Filename: {app}\PlayBF2.exe; Parameters: /q /k /n; Description: "Ввести лицензионный ключ"; Flags: skipifdoesntexist postinstall runascurrentuser; BeforeInstall: BF2KeyChange; Languages: German
+;Filename: {app}\Redist\Keygen\BF2KeyMan.exe; Parameters: /q /k; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Enter license Key"; Languages: German
 Filename: {app}\Redist\PunkBuster\pbsetup.exe; Parameters: /u --i-accept-the-pb-eula; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Update PunkBuster"; BeforeInstall: PreparePunkbuster; Languages: German
 ;Filename: {app}\BF2.exe; Parameters: +fullscreen 1 +restart 1 +ignoreAsserts 1; WorkingDir: {app}\Redist\Keygen\; Flags: skipifdoesntexist postinstall runascurrentuser; Description: "Start Battlefield 2"; Languages: German
 
@@ -94,16 +99,45 @@ Name: {userdesktop}\Battlefield 2 - Special Forces; Filename: {app}\BF2.exe; Par
 Name: {group}; Type: filesandordirs
 
 [Languages]
-Name: English; MessagesFile: compiler:Default.isl;
+Name: Armenian; MessagesFile: compiler:Languages\Armenian.islu
+; Name: Basque; MessagesFile: compiler:Languages\Basque.isl
+Name: BrazilianPortuguese; MessagesFile: compiler:Languages\BrazilianPortuguese.isl
+Name: Catalan; MessagesFile: compiler:Languages\Catalan.isl
+Name: Corsican; MessagesFile: compiler:Languages\Corsican.isl
+Name: Czech; MessagesFile: compiler:Languages\Czech.isl
+; LicenseFile: data\docs\license_cz.rtf
+Name: Danish; MessagesFile: compiler:Languages\Danish.isl
+Name: Dutch; MessagesFile: compiler:Languages\Dutch.isl
+Name: English; MessagesFile: compiler:Default.isl
 ; LicenseFile: data\docs\license_en.rtf
-Name: German; MessagesFile: compiler:Languages\German.isl;
+Name: Finnish; MessagesFile: compiler:Languages\Finnish.isl
+Name: French; MessagesFile: compiler:Languages\French.isl
+Name: German; MessagesFile: compiler:Languages\German.isl
 ; LicenseFile: data\docs\license_de.rtf
-Name: Russian; MessagesFile: compiler:Languages\Russian.isl;
+Name: Greek; MessagesFile: compiler:Languages\Greek.isl
+Name: Hebrew; MessagesFile: compiler:Languages\Hebrew.isl
+Name: Hungarian; MessagesFile: compiler:Languages\Hungarian.isl
+Name: Italian; MessagesFile: compiler:Languages\Italian.isl
+; LicenseFile: data\docs\license_it.rtf
+Name: Japanese; MessagesFile: compiler:Languages\Japanese.isl
+Name: Nepali; MessagesFile: compiler:Languages\Nepali.islu
+Name: Norwegian; MessagesFile: compiler:Languages\Norwegian.isl
+Name: Polish; MessagesFile: compiler:Languages\Polish.isl
+Name: Portuguese; MessagesFile: compiler:Languages\Portuguese.isl
+Name: Russian; MessagesFile: compiler:Languages\Russian.isl
 ; LicenseFile: data\docs\license_ru.rtf
+Name: ScottishGaelic; MessagesFile: compiler:Languages\ScottishGaelic.isl
+Name: SerbianCyrillic; MessagesFile: compiler:Languages\SerbianCyrillic.isl
+Name: SerbianLatin; MessagesFile: compiler:Languages\SerbianLatin.isl
+; Name: Slovak; MessagesFile: compiler:Languages\Slovak.isl
+Name: Slovenian; MessagesFile: compiler:Languages\Slovenian.isl
+Name: Spanish; MessagesFile: compiler:Languages\Spanish.isl
+Name: Turkish; MessagesFile: compiler:Languages\Turkish.isl
+Name: Ukrainian; MessagesFile: compiler:Languages\Ukrainian.isl
 
 [INI]
 ; English
-Filename: {group}\Links\Visit PlayBF2.url; Section: InternetShortcut; Key: URL; String: http://playbf2.ru; Languages: English
+Filename: {group}\Links\Visit PlayBF2.url; Section: InternetShortcut; Key: URL; String: http://playbf2.com; Languages: English
 Filename: {group}\Links\Visit website bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru; Languages: English
 Filename: {group}\Links\Visit forums on bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru/forum; Languages: English
 ;Filename: {group}\Links\Visit our website pr.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://pr.tgamer.ru; Languages: English
@@ -112,7 +146,7 @@ Filename: {group}\Links\Visit forums on bf2.tgamer.ru.url; Section: InternetShor
 ;Filename: {group}\Links\Download Point of Existence.url; Section: InternetShortcut; Key: URL; String: http://pointofexistence.com/poe2full.php; Languages: English
 ;Filename: {group}\Links\Download Project Reality.url; Section: InternetShortcut; Key: URL; String: http://www.realitymod.com/downloads.html; Languages: English
 ; Russian
-Filename: {group}\Ссылки\Проект PlayBF2.url; Section: InternetShortcut; Key: URL; String: http://playbf2.ru; Languages: Russian
+Filename: {group}\Ссылки\Проект PlayBF2.url; Section: InternetShortcut; Key: URL; String: http://playbf2.com; Languages: Russian
 Filename: {group}\Ссылки\Посетить веб-сайт bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru; Languages: Russian
 Filename: {group}\Ссылки\Посетить форум bf2.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://bf2.tgamer.ru/forum; Languages: Russian
 ;Filename: {group}\Ссылки\Перейти на сайт pr.tgamer.ru.url; Section: InternetShortcut; Key: URL; String: http://pr.tgamer.ru; Languages: Russian
@@ -141,7 +175,7 @@ Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA CORE\INSTALLED GAMES\EAGAMES\BF2
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA CORE\INSTALLED GAMES\EAGAMES\BF2-2006\ONLINE_MAP_CONTENT\BF2EURO; ValueType: string; ValueName: GameLauncherPath; ValueData: {app}\bf2.exe; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA CORE\INSTALLED GAMES\EAGAMES\BF2-2006\ONLINE_MAP_CONTENT\BF2EURO; ValueType: string; ValueName: DisplayName; ValueData: Battlefield 2: Euro Force Booster Pack; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA CORE\INSTALLED GAMES\EAGAMES\BF2-2006\ONLINE_MAP_CONTENT\BF2EURO; ValueType: string; ValueName: Version; ValueData: 1.5; Check: not IsWin64
-Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: InstallDir; ValueData: {app}; Check: not IsWin64
+Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: InstallDir; ValueData: {app}; AfterInstall: BF2KeyInit; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Version; ValueData: 1.5; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Language; ValueData: English; Check: not IsWin64
 Root: HKLM; SubKey: SOFTWARE\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Locale; ValueData: en_US; Check: not IsWin64
@@ -177,7 +211,7 @@ Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA CORE\INSTALLED GAMES
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA CORE\INSTALLED GAMES\EAGAMES\BF2-2006\ONLINE_MAP_CONTENT\BF2EURO; ValueType: string; ValueName: GameLauncherPath; ValueData: {app}\bf2.exe; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA CORE\INSTALLED GAMES\EAGAMES\BF2-2006\ONLINE_MAP_CONTENT\BF2EURO; ValueType: string; ValueName: DisplayName; ValueData: Battlefield 2: Euro Force Booster Pack; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA CORE\INSTALLED GAMES\EAGAMES\BF2-2006\ONLINE_MAP_CONTENT\BF2EURO; ValueType: string; ValueName: Version; ValueData: 1.5; Check: IsWin64
-Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: InstallDir; ValueData: {app}; Check: IsWin64
+Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: InstallDir; ValueData: {app}; AfterInstall: BF2KeyInit; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Version; ValueData: 1.5; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Language; ValueData: English; Check: IsWin64
 Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2; ValueType: string; ValueName: Locale; ValueData: en_US; Check: IsWin64
@@ -195,10 +229,16 @@ Root: HKLM; SubKey: SOFTWARE\Wow6432Node\Electronic Arts\EA Games\Battlefield 2 
 ;Root: HKLM; SubKey: SOFTWARE\Project Reality\Project Reality: BF2; ValueType: string; ValueName: Version; ValueData: 1.0.36.0; Check: IsWin64
 
 ; Common BF2 url protocol
-Root: HKCR; SubKey: bf2; ValueType: string; ValueName: ; ValueData: URL:PR Protocol
+Root: HKCR; SubKey: bf2; ValueType: string; ValueName: ; ValueData: URL:BF2 Protocol
 Root: HKCR; SubKey: bf2; ValueType: string; ValueName: URL Protocol; ValueData: 
 Root: HKCR; SubKey: bf2\DefaultIcon; ValueType: string; ValueData: """{app}\PlayBF2.ico"""
 Root: HKCR; SubKey: bf2\shell\open\command; ValueType: string; ValueData: """{app}\PlayBF2.exe"" ""%1"""
+
+; Common PlayBF2 url protocol
+Root: HKCR; SubKey: playbf2; ValueType: string; ValueName: ; ValueData: URL:PlayBF2 Protocol
+Root: HKCR; SubKey: playbf2; ValueType: string; ValueName: URL Protocol; ValueData: 
+Root: HKCR; SubKey: playbf2\DefaultIcon; ValueType: string; ValueData: """{app}\PlayBF2.ico"""
+Root: HKCR; SubKey: playbf2\shell\open\command; ValueType: string; ValueData: """{app}\PlayBF2.exe"" ""%1"""
 
 ; Common PR url protocol
 ;Root: HKCR; SubKey: pr; ValueType: string; ValueName: ; ValueData: URL:PR Protocol
@@ -231,6 +271,7 @@ DestName: "WizardForm.TopLogoImage.bmp"; Source: "data\gfx\topbar.bmp"; Flags: d
 Source: data\gfx\splash.bmp;  DestDir: {tmp}; Flags: ignoreversion dontcopy solidbreak
 Source: data\libs\isgsg.dll;  DestDir: {tmp}; Flags: ignoreversion dontcopy solidbreak
 Source: data\libs\iswin7.dll; DestDir: {tmp}; Flags: ignoreversion dontcopy solidbreak
+Source: data\libs\libbf2key.dll; DestDir: {tmp}; Flags: ignoreversion dontcopy solidbreak
 
 ; Distribution files actually defined below
 ; Release distribution files
@@ -3316,13 +3357,18 @@ procedure iswin7_add_glass(Handle:HWND; Left, Top, Right, Bottom : Integer; GDIP
 procedure iswin7_add_button(Handle:HWND); external 'iswin7_add_button@files:iswin7.dll stdcall';
 procedure iswin7_free; external 'iswin7_free@files:iswin7.dll stdcall';
 
+// PlayBF2 Key Manager
+// using libbf2key.dll depedency
+function bf2keyman_app(FormHandle: HWND): HWND; external 'app@files:libbf2key.dll stdcall';
+function bf2keyman_gen(Force: DWORD): DWORD; external 'gen@files:libbf2key.dll stdcall';
+function bf2keyman_hwk(Force: DWORD): DWORD; external 'hwk@files:libbf2key.dll stdcall';
 
 // Open up URL when user clicks on logo
 procedure BannerClick(Sender: TObject);
 var
   ErrorCode:integer;
 begin
-  ShellExec('open','http://www.playbf2.ru/go/client','','',SW_SHOWNORMAL,ewNoWait,ErrorCode);
+  ShellExec('open','http://www.playbf2.com/go/client','','',SW_SHOWNORMAL,ewNoWait,ErrorCode);
 end;
 
 
@@ -3350,7 +3396,7 @@ end;
 
 
 // Make redesign of installer wizard form
-procedure RedesignWizardForm;
+procedure RedesignWizardForm();
 begin
   with WizardForm.Bevel do
   begin
@@ -3464,7 +3510,7 @@ end;
 
 
 // Prepare user for using latest PunkBuster
-procedure PreparePunkBuster;
+procedure PreparePunkBuster();
 var
   Path: String;
   Dir: String;
@@ -3494,8 +3540,45 @@ begin
 end;
 
 
+// Rewrite bf2 keys
+procedure BF2KeyInit();
+var
+  Force: DWORD;
+begin
+  try
+    // Force explanation:
+    // 0 - write key only if no reg.key
+    // 1 - write key if no (or) bad reg.key
+    // 2 - rewrite all keys forcibly
+    Force := 2;
+
+    // gen() writes random keys
+    // bf2keyman_gen(Force); 
+
+    // hwk() writes hardware-locked key
+    bf2keyman_hwk(Force);    
+  except
+    // Exception? 
+  end;
+end;
+
+
+// User decides to enter 
+// bf2 keys manually ..
+procedure BF2KeyChange();
+begin
+  try
+    // app() is used to open
+    // BF2KeyMan window.
+    bf2keyman_app(WizardForm.Handle);
+  except
+    // Exception? 
+  end;
+end;
+
+
 // Init entry point
-procedure InitializeWizard;
+procedure InitializeWizard();
 var
   SplashFile: AnsiString;
 begin
@@ -3503,7 +3586,8 @@ begin
   RedesignWizardForm;
 
   // Show About Setup...
-  with WizardForm do begin
+  with WizardForm do
+  begin
     Position:=poScreenCenter;
   end;
 
